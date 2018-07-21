@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import Tabs from './components/Tabs'
 import TodoTogetherApp from './reducers'
+import Tabs from './components/Tabs'
+import GroupInfo from './components/GroupInfo'
 import './App.css'
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
+          <GroupInfo> </GroupInfo>
           <Tabs></Tabs>
         </div>
       </Provider>

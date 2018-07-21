@@ -1,8 +1,22 @@
 import React, { Component } from 'react'
-import { Button, ListGroupItem } from 'reactstrap'
+import { Button, ListGroupItem, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import './todoItem.css'
 
 export class TodoItem extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          actionsOpen: false
+        };
+      }
+    
+      toggle() {
+        this.setState({
+            actionsOpen: !this.state.actionsOpen
+        });
+      }
+    
     render() {
         return (
             <ListGroupItem className="TodoItem">
@@ -10,9 +24,15 @@ export class TodoItem extends Component {
                     {this.props.title}
                 </div>
                 <div class="TodoItem__action">
-                    <Button color="primary">
-                        Action
-                    </Button>
+                    <ButtonDropdown isOpen={this.state.actionsOpen} toggle={this.toggle.bind(this)}>
+                        <DropdownToggle caret>
+                            Actions
+                        </DropdownToggle>
+                        <DropdownMenu>
+                            <DropdownItem>Start Learning</DropdownItem>
+                            <DropdownItem>Mark as finished</DropdownItem>
+                        </DropdownMenu>
+                    </ButtonDropdown>
                 </div>
             </ListGroupItem>
         );

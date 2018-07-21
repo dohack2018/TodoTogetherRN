@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import { ListGroup } from 'reactstrap'
-import { TodoItem } from './TodoItem'
+import TodoItem from './TodoItem'
+import { connect } from 'react-redux'
+
 import './todoList.css'
 
-export default class TodoList extends Component {
+export class TodoList extends Component {
     render() {
-        const { items } = this.props
-        const listItems = items.map((todo) =>
-            <TodoItem title={todo} key={todo}></TodoItem>
+        const { todosByKey, allKeys } = this.props
+
+        const listItems = allKeys.map((key) => {
+                const todo = todosByKey[key];
+                return <TodoItem title={todo.title} id={todo.key} key={todo.key} ></TodoItem>
+            }
         );
 
         return (
@@ -19,3 +24,12 @@ export default class TodoList extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        allKeys: state.todos.allKeys,
+        todosByKey: state.todos.byKey
+    }
+}
+
+export default connect(mapStateToProps)(TodoList);

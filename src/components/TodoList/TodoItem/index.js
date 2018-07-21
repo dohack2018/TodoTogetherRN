@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { ListGroupItem, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import './todoItem.css'
+import { startLearning } from '../../../actions'
+import { connect } from 'react-redux'
 
 export class TodoItem extends Component {
     constructor(props) {
@@ -12,10 +14,18 @@ export class TodoItem extends Component {
       }
     
       toggle() {
+
         this.setState({
             actionsOpen: !this.state.actionsOpen
         });
       }
+    
+    select(event) {
+        // TODO: Bitte verbessern...
+        if(event.target.innerText == "Start Learning") {
+            this.props.startLearning(this.props.id)
+        }
+    }
     
     render() {
         return (
@@ -29,7 +39,7 @@ export class TodoItem extends Component {
                             Actions
                         </DropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem>Start Learning</DropdownItem>
+                            <DropdownItem onClick={this.select.bind(this)}>Start Learning</DropdownItem>
                             <DropdownItem>Mark as finished</DropdownItem>
                         </DropdownMenu>
                     </ButtonDropdown>
@@ -38,3 +48,13 @@ export class TodoItem extends Component {
         );
     }
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        startLearning: id => {
+            dispatch(startLearning(id));
+        }
+    }
+}
+
+export default connect(undefined, mapDispatchToProps)(TodoItem);

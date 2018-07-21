@@ -1,0 +1,12 @@
+.TodoItem {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.TodoItem__title {
+    grid-area: title
+}
+
+.TodoItem__action {
+    grid-area: action
+}

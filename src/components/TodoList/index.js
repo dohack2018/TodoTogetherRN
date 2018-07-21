@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { ListGroup } from 'reactstrap'
 import { TodoItem } from './TodoItem'
+import './todoList.css'
 
 export default class TodoList extends Component {
     render() {
@@ -9,10 +11,10 @@ export default class TodoList extends Component {
         );
 
         return (
-            <div>
-                <ul>
+            <div class="TodoList">
+                <ListGroup>
                     {listItems}
-                </ul>
+                </ListGroup>
             </div>
         );
     }

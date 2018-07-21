@@ -7,6 +7,7 @@ import Tabs from './components/Tabs'
 class App extends Component {
   render() {
     return (
+      <GroupInfo> </GroupInfo>
       <div className="App">
         <Tabs></Tabs>
       </div>

@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes'
 const initialState = {
     user: {
         id: 2,
-        working: []
+        working: undefined
     },
     todos: {
         byKey: {
@@ -76,10 +76,7 @@ export default function todoTogetherApp(state = initialState, action) {
                 ...state,
                 user: {
                     ...state.user,
-                    working: [
-                        ...state.user.working,
-                        payload
-                    ]
+                    working: payload
                 },
                 todos: {
                     ...state.todos,

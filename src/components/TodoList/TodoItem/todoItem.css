@@ -17,3 +17,7 @@
     background-color: crimson;
     border-radius: 50%;
 }
+
+.Circle--active {
+    background-color: green;
+}

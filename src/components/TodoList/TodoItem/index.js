@@ -28,9 +28,15 @@ export class TodoItem extends Component {
     }
     
     render() {
+        // TODO: Autsch!
+        let ca = ""
+        if(this.props.working == this.props.id) {
+            ca = "Circle--active"
+        }
+
         return (
             <ListGroupItem className="TodoItem">
-                <div className="Circle">
+                <div className={"Circle " + ca}>
                 </div>
                 <div className="TodoItem__title">
                     {this.props.title}
@@ -51,6 +57,12 @@ export class TodoItem extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        working: state.user.working
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return {
         startLearning: id => {
@@ -59,4 +71,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(undefined, mapDispatchToProps)(TodoItem);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoItem);

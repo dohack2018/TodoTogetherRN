@@ -7,11 +7,11 @@ export default class TodoList extends Component {
     render() {
         const { items } = this.props
         const listItems = items.map((todo) =>
-            <TodoItem title={todo}></TodoItem>
+            <TodoItem title={todo} key={todo}></TodoItem>
         );
 
         return (
-            <div class="TodoList">
+            <div className="TodoList">
                 <ListGroup>
                     {listItems}
                 </ListGroup>

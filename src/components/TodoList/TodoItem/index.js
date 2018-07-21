@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, ListGroupItem, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
+import { ListGroupItem, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import './todoItem.css'
 
 export class TodoItem extends Component {
@@ -20,10 +20,10 @@ export class TodoItem extends Component {
     render() {
         return (
             <ListGroupItem className="TodoItem">
-                <div class="TodoItem__title">
+                <div className="TodoItem__title">
                     {this.props.title}
                 </div>
-                <div class="TodoItem__action">
+                <div className="TodoItem__action">
                     <ButtonDropdown isOpen={this.state.actionsOpen} toggle={this.toggle.bind(this)}>
                         <DropdownToggle caret>
                             Actions

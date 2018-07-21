@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import logo from './logo.svg'
-import TodoList from './components/TodoList'
 import Tabs from './components/Tabs'
 import TodoTogetherApp from './reducers'
 import './App.css'

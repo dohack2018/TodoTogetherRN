@@ -2,6 +2,7 @@ import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import TodoList from '../TodoList';
 import classnames from 'classnames';
+import WorkingList from '../WorkingList';
 import './tabs.css';
 
 export default class Tabs extends React.Component {
@@ -45,12 +46,11 @@ export default class Tabs extends React.Component {
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-            <TodoList 
-                items={["Eins", "Zwei", "Drei"]}>
-            </TodoList>
+            <TodoList></TodoList>
           </TabPane>
           <TabPane tabId="2">
-
+            <WorkingList>
+            </WorkingList>
           </TabPane>
         </TabContent>
       </div>

@@ -8,7 +8,10 @@ import './App.css'
 
 class App extends Component {
   render() {
-    const store = createStore(TodoTogetherApp)
+    const store = createStore(
+      TodoTogetherApp,
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
 
     return (
       <Provider store={store}>

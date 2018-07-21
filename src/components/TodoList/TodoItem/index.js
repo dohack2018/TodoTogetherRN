@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { ListGroupItem, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
-import './todoItem.css'
 import { startLearning } from '../../../actions'
 import { connect } from 'react-redux'
+import './todoItem.css'
 
 export class TodoItem extends Component {
     constructor(props) {
@@ -30,6 +30,8 @@ export class TodoItem extends Component {
     render() {
         return (
             <ListGroupItem className="TodoItem">
+                <div className="Circle">
+                </div>
                 <div className="TodoItem__title">
                     {this.props.title}
                 </div>

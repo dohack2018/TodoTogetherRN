@@ -5,6 +5,7 @@ import TodoTogetherApp from './reducers'
 import Tabs from './components/Tabs'
 import GroupInfo from './components/GroupInfo'
 import './App.css'
+import NavMenue from './components/NavMenue'
 
 class App extends Component {
   render() {
@@ -12,12 +13,16 @@ class App extends Component {
       TodoTogetherApp,
       window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
-
+    
     return (
       <Provider store={store}>
         <div className="App">
-          <GroupInfo> </GroupInfo>
-          <Tabs></Tabs>
+          <div className="header">
+            <h1>ToDoTogether</h1>
+          </div>
+            <NavMenue> </NavMenue>
+            <GroupInfo> </GroupInfo>
+            <Tabs></Tabs>
         </div>
       </Provider>
     );

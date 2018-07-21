@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
-export class GroupInfo extends Component {
+export default class GroupInfo extends Component {
     render() {
         const groupName = 'Kibibytes';
         return (
-            <li>
+            <div>
                 You are in group {groupName}
-            </li>
+            
+        <button> 
+            change group
+        </button>
+        </div>
         );
     }
 }

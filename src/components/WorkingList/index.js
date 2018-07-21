@@ -11,11 +11,11 @@ export class WorkingList extends Component {
         const memberList = memberKeys.map((memberKey) => {
         const member = membersByKey[memberKey];
 
-            if(member.working === undefined) return;
+        if(member.working === undefined) return;
 
 
-            return <ListGroupItem key={member.id}>{member.name} working on: {todos[member.working].title}</ListGroupItem>
-        })
+        return <ListGroupItem key={member.id}>{member.name} working on: {todos[member.working].title}</ListGroupItem>
+    })
         
         return (
             <div className="WorkingList">

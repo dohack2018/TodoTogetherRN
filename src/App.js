@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk';
 import TodoTogetherApp from './reducers'
 import Tabs from './components/Tabs'
 import GroupInfo from './components/GroupInfo'
-import './App.css'
 import NavMenue from './components/NavMenue'
+import './App.css'
 
 class App extends Component {
   render() {
     const store = createStore(
       TodoTogetherApp,
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      applyMiddleware(thunk)
     )
     
     return (

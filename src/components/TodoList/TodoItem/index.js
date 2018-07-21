@@ -20,6 +20,8 @@ export class TodoItem extends Component {
     render() {
         return (
             <ListGroupItem className="TodoItem">
+                <div class ="Circle">
+                </div>
                 <div class="TodoItem__title">
                     {this.props.title}
                 </div>
@@ -38,3 +40,5 @@ export class TodoItem extends Component {
         );
     }
 }
+
+

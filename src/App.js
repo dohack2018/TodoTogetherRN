@@ -4,11 +4,16 @@ import './App.css'
 import TodoList from './components/TodoList'
 import Tabs from './components/Tabs'
 import GroupInfo from './components/GroupInfo'
+import NavMenue from './components/NavMenue'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <div class = "header">
+          <h1>ToDoTogether</h1>
+        </div>
+        <NavMenue> </NavMenue>
         <GroupInfo> </GroupInfo>
         <Tabs></Tabs>
       </div>

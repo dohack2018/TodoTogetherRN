@@ -7,10 +7,10 @@ export default class GroupInfo extends Component {
         const groupName = 'Kibibytes';
         return (
             <div className="groupInfo">
-                You are in group {groupName}
+                <h2>You are in group</h2> <h3>{groupName}</h3>
             
         <Button> 
-            change group
+            Change group
         </Button>
         </div>
         );

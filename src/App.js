@@ -6,6 +6,7 @@ import Tabs from './components/Tabs'
 import GroupInfo from './components/GroupInfo'
 import NavMenue from './components/NavMenue'
 
+
 class App extends Component {
   render() {
     return (
@@ -14,6 +15,7 @@ class App extends Component {
           <h1>ToDoTogether</h1>
         </div>
         <NavMenue> </NavMenue>
+        <img src ="logo.png"/> 
         <GroupInfo> </GroupInfo>
         <Tabs></Tabs>
       </div>

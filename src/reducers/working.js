@@ -18,8 +18,7 @@ export default function workingReducer(state = initialState, action) {
     switch(action.type) {
         case actionTypes.START_LEARNING: {
             const { todoId, userId } = action
-
-            return {
+            const newState = {
                 ...state,
                 byTodoId: {
                     ...state.byTodoId,
@@ -32,6 +31,8 @@ export default function workingReducer(state = initialState, action) {
                     }
                 }
             };
+
+            return newState;
         }
         default:
             return state;

@@ -23,6 +23,20 @@ const initialState = {
 
 export default function todosReducer(state = initialState, action) {
     switch(action.type) {
+        case actionTypes.START_LEARNING: {
+            const { todoId, userId } = action
+            
+            return {
+                ...state,
+                byKey: {
+                    ...state.byKey,
+                    [todoId]: {
+                        ...state.byKey[todoId],
+                        working: todoId
+                    }
+                }
+            }
+        }
         default:
             return state;
     }

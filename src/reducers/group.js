@@ -37,6 +37,23 @@ const initialState = {
 
 export default function groupReducer(state = initialState, action) {
     switch(action.type) {
+        case actionTypes.START_LEARNING: {
+            const { todoId, userId } = action
+
+            return {
+                ...state,
+                members: {
+                    ...state.members,
+                    byKey: {
+                        ...state.members.byKey,
+                        [userId]: {
+                            ...state.members.byKey[userId],
+                            working: todoId
+                        }
+                    }
+                }
+            };
+        }
         default:
             return state;
     }

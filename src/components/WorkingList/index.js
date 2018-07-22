@@ -6,25 +6,15 @@ import './workingList.css'
 
 export class WorkingList extends Component {
     render() {
-        const { working, allWorkingIds, todos } = this.props
+        const { working, allWorkingIds, todos, membersByKey, memberKeys } = this.props
 
-        working.allIds.map((workingId) => {
-            const w = working.byTodoId[workingId];
-           // const { title } = todos[todoId];
+        const memberList = memberKeys.map((memberKey) => {
+        const member = membersByKey[memberKey];
 
-            console.log(w);
-        });
+        if(member.working === undefined) return;
 
-        const memberList = "oo"
-
-        // const { membersByKey } = this.props
-        // const memberList = memberKeys.map((memberKey) => {
-        // const member = membersByKey[memberKey];
-
-        // if(member.working === undefined) return;
-
-        // return <ListGroupItem key={member.id}>{member.name} working on: {todos[member.working].title}</ListGroupItem>
-    //})
+        return <ListGroupItem key={member.id}>{member.name} working on: {todos[member.working].title}</ListGroupItem>
+    })
     
     return (
         <div className="WorkingList">

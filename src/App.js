@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import logo from './assets/images/logo.png'
 import './App.css'
 import TodoList from './components/TodoList'
 import Tabs from './components/Tabs'
@@ -15,7 +15,7 @@ class App extends Component {
           <h1>ToDoTogether</h1>
         </div>
         <NavMenue> </NavMenue>
-        <img src ="logo.png"/> 
+        <img className="logo" src ={logo}/> 
         <GroupInfo> </GroupInfo>
         <Tabs></Tabs>
       </div>

@@ -11,6 +11,9 @@ export class TodoList extends Component {
 
         const listItems = allKeys.map((key) => {
             const todo = todosByKey[key];
+
+            if(todo.finish) return;
+
             return <TodoItem title={todo.title} id={todo.key} key={todo.key} ></TodoItem>
         }
         );

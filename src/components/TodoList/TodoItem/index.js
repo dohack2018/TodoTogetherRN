@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ListGroupItem, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
-import { startLearning } from '../../../actions'
+import { startLearning, finishTodo } from '../../../actions'
 import { connect } from 'react-redux'
 import './todoItem.css'
 
@@ -25,6 +25,9 @@ export class TodoItem extends Component {
         if(event.target.innerText == "Start Learning") {
             this.props.startLearning(this.props.id)
         }
+        else if(event.target.innerText == "Mark as finished") {
+            this.props.finishTodo(this.props.id)
+        }
     }
     
     render() {
@@ -48,7 +51,7 @@ export class TodoItem extends Component {
                         </DropdownToggle>
                         <DropdownMenu>
                             <DropdownItem onClick={this.select.bind(this)}>Start Learning</DropdownItem>
-                            <DropdownItem>Mark as finished</DropdownItem>
+                            <DropdownItem onClick={this.select.bind(this)}>Mark as finished</DropdownItem>
                         </DropdownMenu>
                     </ButtonDropdown>
                 </div>
@@ -67,6 +70,10 @@ function mapDispatchToProps(dispatch) {
     return {
         startLearning: todoId => {
             dispatch(startLearning(todoId));
+        },
+
+        finishTodo: todoId => {
+            dispatch(finishTodo(todoId))
         }
     }
 }

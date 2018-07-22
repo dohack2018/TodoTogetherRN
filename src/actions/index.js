@@ -27,3 +27,10 @@ export function startLearning(todoId) {
         });
     };
   }
+
+  export function finishTodo(todoId) {
+      return {
+          type: actionTypes.FINISH_TODO,
+          todoId
+      }
+  }

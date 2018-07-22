@@ -32,7 +32,7 @@ export default class Tabs extends React.Component {
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-                All Tasks
+                Unfinished Tasks
             </NavLink>
           </NavItem>
           <NavItem>

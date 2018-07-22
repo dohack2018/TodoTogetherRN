@@ -35,24 +35,39 @@ const initialState = {
     }
 }
 
+function updateWorking(state, todoId, userId) {
+    return {
+        ...state,
+        members: {
+            ...state.members,
+            byKey: {
+                ...state.members.byKey,
+                [userId]: {
+                    ...state.members.byKey[userId],
+                    working: todoId
+                }
+            }
+        }
+    };
+}
+
 export default function groupReducer(state = initialState, action) {
     switch(action.type) {
         case actionTypes.START_LEARNING: {
             const { todoId, userId } = action
 
-            return {
-                ...state,
-                members: {
-                    ...state.members,
-                    byKey: {
-                        ...state.members.byKey,
-                        [userId]: {
-                            ...state.members.byKey[userId],
-                            working: todoId
-                        }
-                    }
-                }
-            };
+            return updateWorking(state, todoId, userId);
+        }
+
+        case actionTypes.FINISH_TODO: {
+            const { todoId, userId } = action
+
+            let member = { ...state.members.byKey[userId] }
+
+            if(member.working != todoId) 
+                return state;
+
+            return updateWorking(state, undefined, userId);
         }
         default:
             return state;

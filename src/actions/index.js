@@ -29,8 +29,14 @@ export function startLearning(todoId) {
   }
 
   export function finishTodo(todoId) {
-      return {
-          type: actionTypes.FINISH_TODO,
-          todoId
-      }
+    return (dispatch, getState) => {
+      const state = getState();
+      const userId = state.user.id
+    
+      return dispatch({
+        type: actionTypes.FINISH_TODO,
+        todoId,
+        userId
+    });
+    }
   }

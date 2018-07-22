@@ -42,7 +42,7 @@ export class TodoItem extends Component {
                     {this.props.title}
                 </div>
                 <div className="TodoItem__action">
-                    <ButtonDropdown isOpen={this.state.actionsOpen} toggle={this.toggle.bind(this)}>
+                    <ButtonDropdown isOpen={this.state.actionsOpen} toggle={this.toggle.bind(this)} direction="left">
                         <DropdownToggle caret>
                             Actions
                         </DropdownToggle>

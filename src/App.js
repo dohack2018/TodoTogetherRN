@@ -9,6 +9,7 @@ import Tabs from './components/Tabs'
 import GroupInfo from './components/GroupInfo'
 import NavMenue from './components/NavMenue'
 import './App.css'
+import CurrentWorkig from './components/CurrentWorking';
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
             <div className="header">
               <h1>ToDoTogether</h1>
             </div>
+            <CurrentWorkig></CurrentWorkig>
           <NavMenue> </NavMenue>
           <img className="logo" src={logo}/> 
           <GroupInfo> </GroupInfo>

@@ -1,12 +1,16 @@
+.app {
+    margin: 42px;
+}
+
 .header {
     background-color: aliceblue;
     padding: 20px;
     text-align: center;
 }
 
-
 .logo {
     width: 20vw;
+    min-width: 192px;
     margin: 0 auto;
     display: block;
 }

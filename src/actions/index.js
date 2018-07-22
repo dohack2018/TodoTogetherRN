@@ -6,10 +6,11 @@ import Config from "../Config"
 
 export function startLearning(todoId) {
     return (dispatch, getState) => {
-        const { user } = getState();
+        const state = getState();
+        const userId = state.user.id;
 
         axios.post(`${Config.appUrl}/learning`, {
-            userId: user.id,
+            userId,
             todoId
           })
           .then(function (response) {
@@ -21,7 +22,8 @@ export function startLearning(todoId) {
 
         dispatch({
             type: actionTypes.START_LEARNING,
-            payload: todoId
+            todoId,
+            userId
         });
     };
   }

@@ -65,8 +65,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        startLearning: id => {
-            dispatch(startLearning(id));
+        startLearning: todoId => {
+            dispatch(startLearning(todoId));
         }
     }
 }
